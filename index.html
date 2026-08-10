@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CountDown Timer App</title>
+  <script src="app.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-display { font-family: 'Space Grotesk', monospace; }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-950 via-purple-900 to-slate-900 px-4">
+
+  <div class="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8">
+
+    <h1 class="font-display text-2xl font-bold text-white text-center mb-6 tracking-wide">
+      Countdown Timer
+    </h1>
+
+    <div class="flex gap-3 mb-6">
+      <input type="number" id="hourInput" placeholder="HH" min="0"
+        class="w-1/3 bg-white/10 border border-white/20 rounded-xl px-3 py-2 text-white placeholder-white/40 text-center focus:outline-none focus:ring-2 focus:ring-teal-400">
+      <input type="number" id="minutesInput" placeholder="MM" min="0"
+        class="w-1/3 bg-white/10 border border-white/20 rounded-xl px-3 py-2 text-white placeholder-white/40 text-center focus:outline-none focus:ring-2 focus:ring-teal-400">
+      <input type="number" id="secondsInput" placeholder="SS" min="0" max="59"
+        class="w-1/3 bg-white/10 border border-white/20 rounded-xl px-3 py-2 text-white placeholder-white/40 text-center focus:outline-none focus:ring-2 focus:ring-teal-400">
+    </div>
+
+    <h2 id="display" class="font-display text-6xl font-bold text-white text-center tracking-wider mb-8">
+      00:00:00
+    </h2>
+
+    <div class="flex gap-3">
+      <button id="startBtn" class="flex-1 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold py-3 rounded-xl transition-colors">
+        Start
+      </button>
+      <button id="pauseBtn" class="flex-1 bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold py-3 rounded-xl transition-colors">
+        Pause
+      </button>
+      <button id="resetBtn" class="flex-1 bg-rose-500 hover:bg-rose-400 text-white font-semibold py-3 rounded-xl transition-colors">
+        Reset
+      </button>
+    </div>
+
+  </div>
+
+  <div id="timeUpModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center">
+    <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl px-8 py-6 text-center">
+      <p class="font-display text-xl font-semibold text-white mb-4">Time's up!</p>
+      <button id="dismissBtn" class="bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold px-4 py-2 rounded-xl transition-colors">OK</button>
+    </div>
+  </div>
+
+</body>
+</html>
